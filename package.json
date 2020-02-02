@@ -1,0 +1,25 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "chat made with express, node and websockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "chat.git"
+  },
+  "keywords": [
+    "chat",
+    "websockets",
+    "nodeJS",
+    "express"
+  ],
+  "author": "Ahmsanz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
