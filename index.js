@@ -1,6 +1,6 @@
 const express = require('express');
 
-let socket = require('socket.io');
+var socket = require('socket.io');
 
 
 //app set up
@@ -17,6 +17,13 @@ app.use(express.static('public'));
 
 const io = socket(server);
 
+// this io.on method will handle what happens with the chat message on the server side. It listens to the particular socket where the message is being transferred, and re-emits that message to the rest of sockets connected to the server.
+
 io.on('connection', (socket) => {
   console.log('socket connection is made');
-})
+  console.log(socket.id);
+
+  socket.on('chat', data => {
+    io.sockets.emit('chat', data);
+  });
+});
